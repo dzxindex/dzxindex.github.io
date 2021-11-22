@@ -1,17 +1,22 @@
 # 码志
 
-我的个人博客：<https://mazhuang.org>，欢迎 Star 和 Fork。
+我的个人博客：<https://dzxindex.github.io/>，欢迎 Star 和 Fork。
+
+
+参考博客模板：https://github.com/mzlogin/mzlogin.github.io.git
 
 ## 概览
 
 <!-- vim-markdown-toc GFM -->
 
-* [效果预览](#效果预览)
-* [Fork 指南](#fork-指南)
-* [使用文档](#使用文档)
-* [经验与思考](#经验与思考)
-* [联系我](#联系我)
-* [致谢](#致谢)
+- [码志](#码志)
+  - [概览](#概览)
+  - [效果预览](#效果预览)
+  - [Fork 指南](#fork-指南)
+  - [使用文档](#使用文档)
+  - [经验与思考](#经验与思考)
+  - [联系我](#联系我)
+  - [致谢](#致谢)
 
 <!-- vim-markdown-toc -->
 
