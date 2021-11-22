@@ -5,9 +5,9 @@ baseurl:
 url: https://dzxindex.github.io
 date_format: "ordinal"
 title: 学习博客
-subtitle: "公众号：闷骚的程序员"
-description: "马壮的个人博客，公众号：闷骚的程序员"
-keywords: 码志, Zhuang Ma, dzxindex, mazhuang, 闷骚的程序员
+subtitle: "安全&代码 学习博客"
+description: "安全&代码 学习博客"
+keywords: 码志, Go, Python, dzxindex,  闷骚的程序员
 timezone: Asia/Shanghai
 encoding: "utf-8"
 repository: dzxindex/dzxindex.github.io
