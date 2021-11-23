@@ -1,9 +1,9 @@
 ---
 layout: post
-title: git泄漏漏洞与危害
-categories: git
+title: Git泄漏漏洞与危害
+categories: Git
 description: .git的安全漏洞
-keywords: 安全, git
+keywords: 安全, Git
 ---
 
 
