@@ -81,11 +81,27 @@
 
   
     {
+      "title"    : "读叔本华《人生的智慧》",
+      "category" : "Blog",
+      
+      "url"      : "https://dzxindex.github.io/2021/11/22/elk-ndoejson/",
+      "keywords" : "叔本华, 人生的智慧"
+    } ,
+  
+    {
       "title"    : "My page",
       "category" : "安全",
       
       "url"      : "https://dzxindex.github.io/2021/11/22/myFirst/",
       "keywords" : "安全, git"
+    } ,
+  
+    {
+      "title"    : "",
+      "category" : "",
+      
+      "url"      : "https://dzxindex.github.io/2021/11/23/2021-11-22-git-security/",
+      "keywords" : ""
     } ,
   
     {
