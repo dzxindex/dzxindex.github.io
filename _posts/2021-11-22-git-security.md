@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ".git" 泄漏漏洞与危害
+title: git泄漏漏洞与危害
 categories: git
 description: .git的安全漏洞
 keywords: 安全, git
