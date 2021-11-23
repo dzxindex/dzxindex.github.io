@@ -89,19 +89,19 @@
     } ,
   
     {
+      "title"    : "git泄漏漏洞与危害",
+      "category" : "git",
+      
+      "url"      : "https://dzxindex.github.io/2021/11/22/git-security/",
+      "keywords" : "安全, git"
+    } ,
+  
+    {
       "title"    : "My page",
       "category" : "安全",
       
       "url"      : "https://dzxindex.github.io/2021/11/22/myFirst/",
       "keywords" : "安全, git"
-    } ,
-  
-    {
-      "title"    : "",
-      "category" : "",
-      
-      "url"      : "https://dzxindex.github.io/2021/11/23/2021-11-22-git-security/",
-      "keywords" : ""
     } ,
   
     {
