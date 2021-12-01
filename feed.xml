@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://dzxindex.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://dzxindex.github.io/" rel="alternate" type="text/html" /><updated>2021-12-01T17:11:13+08:00</updated><id>https://dzxindex.github.io/feed.xml</id><title type="html">学习博客</title><subtitle>安全&amp;代码 学习博客</subtitle><author><name>Zhuang Ma</name></author><entry><title type="html">how-to-use-frp</title><link href="https://dzxindex.github.io/2021/12/01/frp-how-to-use-frp/" rel="alternate" type="text/html" title="how-to-use-frp" /><published>2021-12-01T00:00:00+08:00</published><updated>2021-12-01T00:00:00+08:00</updated><id>https://dzxindex.github.io/2021/12/01/frp-how-to-use-frp</id><content type="html" xml:base="https://dzxindex.github.io/2021/12/01/frp-how-to-use-frp/">&lt;h1 id=&quot;为什么需要内网穿透&quot;&gt;为什么需要内网穿透？&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://dzxindex.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://dzxindex.github.io/" rel="alternate" type="text/html" /><updated>2021-12-01T17:16:28+08:00</updated><id>https://dzxindex.github.io/feed.xml</id><title type="html">学习博客</title><subtitle>安全&amp;代码 学习博客</subtitle><author><name>Zhuang Ma</name></author><entry><title type="html">how-to-use-frp</title><link href="https://dzxindex.github.io/2021/12/01/frp-how-to-use-frp/" rel="alternate" type="text/html" title="how-to-use-frp" /><published>2021-12-01T00:00:00+08:00</published><updated>2021-12-01T00:00:00+08:00</updated><id>https://dzxindex.github.io/2021/12/01/frp-how-to-use-frp</id><content type="html" xml:base="https://dzxindex.github.io/2021/12/01/frp-how-to-use-frp/">&lt;h1 id=&quot;为什么需要内网穿透&quot;&gt;为什么需要内网穿透？&lt;/h1&gt;
 
 &lt;p&gt;如果公司的内网不给提供外网访问，或者没有给分配外网可以访问的IP，我们又需要访问SSH登录内网的服务器，远程桌面、远程文件我们该怎么办？
 远程桌面使用TeamViewer，但需要访问端也拥有TeamViewer软件，不方便。且TeamViewer不易实现远程文件访问。
@@ -9,13 +9,17 @@
 
 &lt;h1 id=&quot;frp的作用&quot;&gt;frp的作用&lt;/h1&gt;
 
-&lt;p&gt;利用处于内网或防火墙后的机器，对外网环境提供 http 或 https 服务。
-对于 http, https 服务支持基于域名的虚拟主机，支持自定义域名绑定，使多个域名可以共用一个80端口。
-利用处于内网或防火墙后的机器，对外网环境提供 tcp 和 udp 服务，例如在家里通过 ssh 访问处于公司内网环境内的主机。&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;利用处于内网或防火墙后的机器，对外网环境提供 http 或 https 服务。&lt;/li&gt;
+  &lt;li&gt;对于 http, https 服务支持基于域名的虚拟主机，支持自定义域名绑定，使多个域名可以共用一个80端口。&lt;/li&gt;
+  &lt;li&gt;利用处于内网或防火墙后的机器，对外网环境提供 tcp 和 udp 服务，例如在家里通过 ssh 访问处于公司内网环境内的主机。&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h1 id=&quot;安装&quot;&gt;安装&lt;/h1&gt;
-&lt;p&gt;下载：
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wget https://github.com/fatedier/frp/releases/download/v0.22.0/frp_0.22.0_linux_amd64.tar.gz&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;下载：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wget https://github.com/fatedier/frp/releases/download/v0.22.0/frp_0.22.0_linux_amd64.tar.gz&lt;/code&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;服务端设置&quot;&gt;服务端设置&lt;/h1&gt;
 
