@@ -1,4 +1,98 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://dzxindex.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://dzxindex.github.io/" rel="alternate" type="text/html" /><updated>2021-11-24T14:21:03+08:00</updated><id>https://dzxindex.github.io/feed.xml</id><title type="html">学习博客</title><subtitle>安全&amp;代码 学习博客</subtitle><author><name>Zhuang Ma</name></author><entry><title type="html">docker command</title><link href="https://dzxindex.github.io/2021/11/23/docker-command/" rel="alternate" type="text/html" title="docker command" /><published>2021-11-23T00:00:00+08:00</published><updated>2021-11-23T00:00:00+08:00</updated><id>https://dzxindex.github.io/2021/11/23/docker-command</id><content type="html" xml:base="https://dzxindex.github.io/2021/11/23/docker-command/">&lt;h1 id=&quot;delete&quot;&gt;delete&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://dzxindex.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://dzxindex.github.io/" rel="alternate" type="text/html" /><updated>2021-12-01T17:11:13+08:00</updated><id>https://dzxindex.github.io/feed.xml</id><title type="html">学习博客</title><subtitle>安全&amp;代码 学习博客</subtitle><author><name>Zhuang Ma</name></author><entry><title type="html">how-to-use-frp</title><link href="https://dzxindex.github.io/2021/12/01/frp-how-to-use-frp/" rel="alternate" type="text/html" title="how-to-use-frp" /><published>2021-12-01T00:00:00+08:00</published><updated>2021-12-01T00:00:00+08:00</updated><id>https://dzxindex.github.io/2021/12/01/frp-how-to-use-frp</id><content type="html" xml:base="https://dzxindex.github.io/2021/12/01/frp-how-to-use-frp/">&lt;h1 id=&quot;为什么需要内网穿透&quot;&gt;为什么需要内网穿透？&lt;/h1&gt;
+
+&lt;p&gt;如果公司的内网不给提供外网访问，或者没有给分配外网可以访问的IP，我们又需要访问SSH登录内网的服务器，远程桌面、远程文件我们该怎么办？
+远程桌面使用TeamViewer，但需要访问端也拥有TeamViewer软件，不方便。且TeamViewer不易实现远程文件访问。
+使用蒲公英相关的拨号软件进行组网，可用，但免费版本网络速度极慢，体验不佳，几乎无法正常使用。
+使用花生壳软件进行DNS解析，可用，但同第二点所述，免费版本有带宽限制，无法实际使用。&lt;/p&gt;
+
+&lt;p&gt;那么上述的场景怎么既简单又高效的实现内网穿透呢？高效的frp是一个不错的选择。&lt;/p&gt;
+
+&lt;h1 id=&quot;frp的作用&quot;&gt;frp的作用&lt;/h1&gt;
+
+&lt;p&gt;利用处于内网或防火墙后的机器，对外网环境提供 http 或 https 服务。
+对于 http, https 服务支持基于域名的虚拟主机，支持自定义域名绑定，使多个域名可以共用一个80端口。
+利用处于内网或防火墙后的机器，对外网环境提供 tcp 和 udp 服务，例如在家里通过 ssh 访问处于公司内网环境内的主机。&lt;/p&gt;
+
+&lt;h1 id=&quot;安装&quot;&gt;安装&lt;/h1&gt;
+&lt;p&gt;下载：
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wget https://github.com/fatedier/frp/releases/download/v0.22.0/frp_0.22.0_linux_amd64.tar.gz&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;服务端设置&quot;&gt;服务端设置&lt;/h1&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# vim frps.ini
+
+[common]
+bind_port = 7000
+dashboard_port = 7500
+token = 12345678
+dashboard_user = admin
+dashboard_pwd = admin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;frps 服务端启动程序&lt;/li&gt;
+  &lt;li&gt;frps.ini 服务端配置文件&lt;/li&gt;
+  &lt;li&gt;frps_full.ini 服务端全量配置文件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;运行&quot;&gt;运行&lt;/h1&gt;
+
+&lt;p&gt;编辑保存完成以后，此时我们可以运行一下，执行以下命令运行。&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./frps -c frps.ini
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;客户端设置&quot;&gt;客户端设置&lt;/h1&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# vim frpc.ini
+[common]
+server_addr = 49.233.169.171
+server_port = 7000
+token = 12345678
+
+[ssh]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 22
+remote_port = 8001 # 本地监听端口
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;server_addr就是你公网服务器的IP。&lt;/li&gt;
+  &lt;li&gt;server_port服务端设置的端口。&lt;/li&gt;
+  &lt;li&gt;token跟服务端设置的token保持一致即可。&lt;/li&gt;
+  &lt;li&gt;type为代理的类型，SSH服务设置为tcp类型。&lt;/li&gt;
+  &lt;li&gt;local_ip为本地IP。&lt;/li&gt;
+  &lt;li&gt;local_port为内网客户端设置的SSH端口。&lt;/li&gt;
+  &lt;li&gt;remote_port为内网提供给外网访问的服务端口。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;运行-1&quot;&gt;运行&lt;/h2&gt;
+
+&lt;p&gt;放在/app 目录下&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/app/frp/frpc -c /app/frp/frps.ini
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;frp后台运行&quot;&gt;frp后台运行&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nohup /app/frp/frpc -c /app/frp/frps.ini &amp;amp;&lt;/code&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;进入虚拟机操作，不能通过ssh软件&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;客户端连接&quot;&gt;客户端连接&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;ssh -p 客户端端口 用户@IP&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ssh -p 本地监听端口 用户名@服务端IP
+如：
+ssh -p 8001 root@119.96.220.225
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;参考&quot;&gt;参考&lt;/h1&gt;
+&lt;p&gt;转载：https://juejin.cn/post/6854573210306871304#heading-4&lt;/p&gt;</content><author><name>Zhuang Ma</name></author><category term="frp" /><summary type="html">为什么需要内网穿透？</summary></entry><entry><title type="html">docker command</title><link href="https://dzxindex.github.io/2021/11/23/docker-command/" rel="alternate" type="text/html" title="docker command" /><published>2021-11-23T00:00:00+08:00</published><updated>2021-11-23T00:00:00+08:00</updated><id>https://dzxindex.github.io/2021/11/23/docker-command</id><content type="html" xml:base="https://dzxindex.github.io/2021/11/23/docker-command/">&lt;h1 id=&quot;delete&quot;&gt;delete&lt;/h1&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 &lt;span class=&quot;c&quot;&gt;# 删除全部镜像&lt;/span&gt;
