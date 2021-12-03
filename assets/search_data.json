@@ -121,6 +121,14 @@
     } ,
   
     {
+      "title"    : "Goland debug 模式更新",
+      "category" : "cate1",
+      
+      "url"      : "https://dzxindex.github.io/2021/12/03/Goland-change-dlv-copy/",
+      "keywords" : "Goland , 编辑器"
+    } ,
+  
+    {
       "title"    : "JSON",
       "category" : "",
       
