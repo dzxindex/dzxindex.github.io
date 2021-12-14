@@ -130,10 +130,26 @@
   
     {
       "title"    : "FOFA介绍",
+      "category" : "安全漏洞",
+      
+      "url"      : "https://dzxindex.github.io/2021/12/14/CVE-log4j2/",
+      "keywords" : "log4j2"
+    } ,
+  
+    {
+      "title"    : "FOFA介绍",
       "category" : "FOFA",
       
       "url"      : "https://dzxindex.github.io/2021/12/14/fofa-search/",
       "keywords" : "FOFA , 信息收集"
+    } ,
+  
+    {
+      "title"    : "CEYE平台的使用",
+      "category" : "安全",
+      
+      "url"      : "https://dzxindex.github.io/2021/12/14/security-CEYE/",
+      "keywords" : "安全"
     } ,
   
     {
