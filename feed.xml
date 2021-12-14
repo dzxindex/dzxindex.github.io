@@ -1,23 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://dzxindex.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://dzxindex.github.io/" rel="alternate" type="text/html" /><updated>2021-12-14T16:09:52+08:00</updated><id>https://dzxindex.github.io/feed.xml</id><title type="html">学习博客</title><subtitle>安全&amp;代码 学习博客</subtitle><author><name>Zhuang Ma</name></author><entry><title type="html">log4j2 一个JAVA的大漏洞</title><link href="https://dzxindex.github.io/2021/12/14/CVE-log4j2/" rel="alternate" type="text/html" title="log4j2 一个JAVA的大漏洞" /><published>2021-12-14T00:00:00+08:00</published><updated>2021-12-14T00:00:00+08:00</updated><id>https://dzxindex.github.io/2021/12/14/CVE-log4j2</id><content type="html" xml:base="https://dzxindex.github.io/2021/12/14/CVE-log4j2/">&lt;h1 id=&quot;log4j2-网络安全史册上的漏洞&quot;&gt;log4j2-网络安全史册上的漏洞&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://dzxindex.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://dzxindex.github.io/" rel="alternate" type="text/html" /><updated>2021-12-14T16:26:50+08:00</updated><id>https://dzxindex.github.io/feed.xml</id><title type="html">学习博客</title><subtitle>安全&amp;代码 学习博客</subtitle><author><name>Zhuang Ma</name></author><entry><title type="html">log4j2 一个JAVA的大漏洞</title><link href="https://dzxindex.github.io/2021/12/14/CVE-log4j2/" rel="alternate" type="text/html" title="log4j2 一个JAVA的大漏洞" /><published>2021-12-14T00:00:00+08:00</published><updated>2021-12-14T00:00:00+08:00</updated><id>https://dzxindex.github.io/2021/12/14/CVE-log4j2</id><content type="html" xml:base="https://dzxindex.github.io/2021/12/14/CVE-log4j2/">&lt;h1 id=&quot;log4j2-网络安全史册上的漏洞&quot;&gt;log4j2 网络安全史册上的漏洞&lt;/h1&gt;
 
 &lt;p&gt;不管是什么编程语言，不管是前端后端还是客户端，对打日志都不会陌生。&lt;/p&gt;
 
 &lt;p&gt;通过日志，可以帮助我们了解程序的运行情况，排查程序运行中出现的问题。&lt;/p&gt;
 
-&lt;p&gt;在Java技术栈中，用的比较多的日志输出框架主要是log4j2和logback。&lt;/p&gt;
+&lt;p&gt;在Java技术栈中，用的比较多的日志输出框架主要是 log4j2 和 logback 。&lt;/p&gt;
 
-&lt;p&gt;今天讨论的主角就是log4j2。&lt;/p&gt;
+&lt;p&gt;今天讨论的主角就是 log4j2。&lt;/p&gt;
 
 &lt;p&gt;我们经常会在日志中输出一些变量，比如：&lt;/p&gt;
 
-&lt;p&gt;logger.info(“client ip: {}”, clientIp)
-现在思考一个问题：&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+logger.info(&quot;client ip: {}&quot;, clientIp)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;现在思考一个问题：&lt;/p&gt;
 
 &lt;p&gt;假如现在想要通过日志输出一个Java对象，但这个对象不在程序中，而是在其他地方，比如可能在某个文件中，甚至可能在网络上的某个地方，这种时候怎么办呢？&lt;/p&gt;
 
-&lt;p&gt;log4j2的强大之处在于，除了可以输出程序中的变量，它还提供了一个叫Lookup的东西，可以用来输出更多内容：&lt;/p&gt;
+&lt;p&gt;log4j2 的强大之处在于,除了可以输出程序中的变量,它还提供了一个叫 Lookup 的东西,可以用来输出更多内容：&lt;/p&gt;
 
-&lt;h2 id=&quot;jndi-是什么&quot;&gt;JNDI 是什么？&lt;/h2&gt;
+&lt;p&gt;lookup，顾名思义就是查找、搜索的意思，那在log4j2中，就是允许在输出日志的时候，通过某种方式去查找要输出的内容。&lt;/p&gt;
+
+&lt;h2 id=&quot;jndi-是什么&quot;&gt;JNDI 是什么?&lt;/h2&gt;
 
 &lt;p&gt;JNDI即 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Java Naming and Directory Interface&lt;/code&gt;（JAVA命名和目录接口），它提供一个目录系统，并将服务名称与对象关联起来，从而使得开发人员在开发过程中可以使用名称来访问对象。&lt;/p&gt;
 
@@ -27,14 +32,17 @@
 
 &lt;p&gt;那不同的数据源肯定有不同的查找方式，所以JNDI也只是一个上层封装，在它下面也支持很多种具体的数据源。&lt;/p&gt;
 
-&lt;h3 id=&quot;ldap是什么&quot;&gt;LDAP是什么？&lt;/h3&gt;
+&lt;h3 id=&quot;ldap-与-jndi-关系&quot;&gt;LDAP 与 JNDI 关系？&lt;/h3&gt;
+
 &lt;p&gt;继续把目光聚焦，咱们只看这个叫LDAP的东西。&lt;/p&gt;
 
 &lt;p&gt;LDAP 即 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lightweight Directory Access Protocol&lt;/code&gt;（轻量级目录访问协议），目录是一个为查询、浏览和搜索而优化的专业分布式数据库，它呈树状结构组织数据，就好象Linux/Unix系统中的文件目录一样。目录数据库和关系数据库不同，它有优异的读性能，但写性能差，并且没有事务处理、回滚等复杂功能，不适于存储修改频繁的数据。所以目录天生是用来查询的，就好像它的名字一样。&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&quot;/images/wiki/breaststroke.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;转载&quot;&gt;转载&lt;/h2&gt;
 
-&lt;p&gt;https://zhuanlan.zhihu.com/p/444103520&lt;/p&gt;</content><author><name>Zhuang Ma</name></author><category term="安全漏洞" /><summary type="html">log4j2-网络安全史册上的漏洞</summary></entry><entry><title type="html">FOFA介绍</title><link href="https://dzxindex.github.io/2021/12/14/fofa-search/" rel="alternate" type="text/html" title="FOFA介绍" /><published>2021-12-14T00:00:00+08:00</published><updated>2021-12-14T00:00:00+08:00</updated><id>https://dzxindex.github.io/2021/12/14/fofa-search</id><content type="html" xml:base="https://dzxindex.github.io/2021/12/14/fofa-search/">&lt;h1 id=&quot;fofa介绍&quot;&gt;FOFA介绍&lt;/h1&gt;
+&lt;p&gt;https://zhuanlan.zhihu.com/p/444103520&lt;/p&gt;</content><author><name>Zhuang Ma</name></author><category term="安全漏洞" /><category term="JAVA" /><summary type="html">log4j2 网络安全史册上的漏洞</summary></entry><entry><title type="html">FOFA介绍</title><link href="https://dzxindex.github.io/2021/12/14/fofa-search/" rel="alternate" type="text/html" title="FOFA介绍" /><published>2021-12-14T00:00:00+08:00</published><updated>2021-12-14T00:00:00+08:00</updated><id>https://dzxindex.github.io/2021/12/14/fofa-search</id><content type="html" xml:base="https://dzxindex.github.io/2021/12/14/fofa-search/">&lt;h1 id=&quot;fofa介绍&quot;&gt;FOFA介绍&lt;/h1&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://fofa.so/&quot;&gt;FOFA&lt;/a&gt; 是一款非常强大的搜索引擎，FOFA（网络空间资产检索系统）是世界上数据覆盖更完整的IT设备搜索引擎，拥有全球联网IT设备更全的DNA信息。&lt;/p&gt;
 
