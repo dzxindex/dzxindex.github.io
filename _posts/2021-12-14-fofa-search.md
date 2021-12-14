@@ -1,3 +1,12 @@
+---
+layout: post
+title: FOFA介绍
+categories: [FOFA, 信息收集]
+description: FOFA是一款非常强大的搜索引擎
+keywords: FOFA , 信息收集
+---
+
+
 # FOFA介绍
 
 FOFA是一款非常强大的搜索引擎，FOFA（网络空间资产检索系统）是世界上数据覆盖更完整的IT设备搜索引擎，拥有全球联网IT设备更全的DNA信息。
