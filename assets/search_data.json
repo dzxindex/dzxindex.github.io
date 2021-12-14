@@ -129,7 +129,7 @@
     } ,
   
     {
-      "title"    : "FOFA介绍",
+      "title"    : "log4j2 一个JAVA的大漏洞",
       "category" : "安全漏洞",
       
       "url"      : "https://dzxindex.github.io/2021/12/14/CVE-log4j2/",
