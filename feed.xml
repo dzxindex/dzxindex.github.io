@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://dzxindex.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://dzxindex.github.io/" rel="alternate" type="text/html" /><updated>2021-12-14T17:38:39+08:00</updated><id>https://dzxindex.github.io/feed.xml</id><title type="html">学习博客</title><subtitle>安全&amp;代码 学习博客</subtitle><author><name>Zhuang Ma</name></author><entry><title type="html">log4j2 一个JAVA的大漏洞</title><link href="https://dzxindex.github.io/2021/12/14/CVE-log4j2/" rel="alternate" type="text/html" title="log4j2 一个JAVA的大漏洞" /><published>2021-12-14T00:00:00+08:00</published><updated>2021-12-14T00:00:00+08:00</updated><id>https://dzxindex.github.io/2021/12/14/CVE-log4j2</id><content type="html" xml:base="https://dzxindex.github.io/2021/12/14/CVE-log4j2/">&lt;h1 id=&quot;log4j2-网络安全史册上的漏洞&quot;&gt;log4j2 网络安全史册上的漏洞&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://dzxindex.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://dzxindex.github.io/" rel="alternate" type="text/html" /><updated>2021-12-14T17:48:00+08:00</updated><id>https://dzxindex.github.io/feed.xml</id><title type="html">学习博客</title><subtitle>安全&amp;代码 学习博客</subtitle><author><name>Zhuang Ma</name></author><entry><title type="html">log4j2 一个JAVA的大漏洞</title><link href="https://dzxindex.github.io/2021/12/14/CVE-log4j2/" rel="alternate" type="text/html" title="log4j2 一个JAVA的大漏洞" /><published>2021-12-14T00:00:00+08:00</published><updated>2021-12-14T00:00:00+08:00</updated><id>https://dzxindex.github.io/2021/12/14/CVE-log4j2</id><content type="html" xml:base="https://dzxindex.github.io/2021/12/14/CVE-log4j2/">&lt;h1 id=&quot;log4j2-网络安全史册上的漏洞&quot;&gt;log4j2 网络安全史册上的漏洞&lt;/h1&gt;
 
 &lt;p&gt;不管是什么编程语言，不管是前端后端还是客户端，对打日志都不会陌生。&lt;/p&gt;
 
@@ -328,6 +328,13 @@ Address: 118.192.48.48
 &lt;p&gt;Golang无法debug原因，Golang delve 版本太低，需更新&lt;/p&gt;
 
 &lt;h1 id=&quot;解决方法&quot;&gt;解决方法&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;降级GO版本&lt;/li&gt;
+  &lt;li&gt;升级Goland 版本&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;其他解决方法&quot;&gt;其他解决方法&lt;/h2&gt;
 
 &lt;ol&gt;
   &lt;li&gt;直接打开cmd操作，不要在项目内
