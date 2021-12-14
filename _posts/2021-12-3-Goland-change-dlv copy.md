@@ -9,7 +9,13 @@ keywords: Goland , 编辑器
 # 问题描述
 Golang无法debug原因，Golang delve 版本太低，需更新
 
+
 # 解决方法
+
+1. 降级GO版本
+2. 升级Goland 版本
+
+## 其他解决方法
 
 1. 直接打开cmd操作，不要在项目内
 `go get github.com/go-delve/delve/cmd/dlv`
