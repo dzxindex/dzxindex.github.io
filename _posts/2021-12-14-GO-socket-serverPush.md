@@ -2,7 +2,7 @@
 layout: post
 title: GO 语言的 socket 通讯
 categories: [ socket , GO ]
-description: FOFA是一款非常强大的搜索引擎
+description: socket 通讯方式
 keywords: socket , GO
 ---
 
