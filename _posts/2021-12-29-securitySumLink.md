@@ -8,6 +8,10 @@ keywords: 安全学习
 
 # 安全学习链接 
 
+## 安全工具库
+
+[404StarLink](https://github.com/knownsec/404StarLink)
+
 ## k8s
 
 [云原生之 Kubernetes 安全](https://paper.seebug.org/1803/)
