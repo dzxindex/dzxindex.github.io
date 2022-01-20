@@ -1,6 +1,6 @@
 ---
 layout: post
-title: VUE 
+title: VUE 入门
 categories: [VUE]
 description: VUE
 keywords: VUE 
