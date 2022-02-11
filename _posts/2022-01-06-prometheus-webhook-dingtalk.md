@@ -8,7 +8,11 @@ keywords: prometheus
 
 # prometheus-webhook-dingtalk
 
+[prometheus docker 地址](
+https://github.com/PagerTree/prometheus-grafana-alertmanager-example)
 
+[prometheus-webhook-dingtalk地址](https://github.com/timonwong/prometheus-webhook-dingtalk.git)
+ 
 
 ## docker 部署 prometheus-webhook-dingtalk
 
@@ -46,6 +50,23 @@ sh examples/send_alerts.sh
 > 修改 send_alerts.sh 发送路径
 
 5. 钉钉收到信息
+
+## 普通运行 prometheus-webhook-dingtalk
+
+
+
+```
+# 编译 main.go
+cd cmd
+go build -o server main.go
+
+# 运行程序，添加 config
+./cmd/prometheus-webhook-dingtalk/server  --config.file=./config.yml
+
+# 测试钉钉通知
+sh  examples/send_alerts.sh
+
+```
 
 
 ## 参考
