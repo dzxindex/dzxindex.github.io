@@ -1,9 +1,9 @@
 ---
 layout: post
-title: sqlmap 使用
-categories: [sqlmap]
-description: sqlmap
-keywords: sqlmap 
+title: ctf 使用
+categories: [ctf]
+description: ctf
+keywords: ctf 
 ---
 
 # ctf
@@ -16,4 +16,5 @@ keywords: sqlmap
 
 ### 逻辑路径
 
-每个文件名，填入 url 路径查看
+- 每个文件名，填入 url 路径查看
+

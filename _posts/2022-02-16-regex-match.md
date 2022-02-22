@@ -1,0 +1,29 @@
+---
+layout: post
+title: 常见正则匹配
+categories: [正则]
+description: 正则
+keywords:  
+---
+
+#
+
+
+## 正则匹配测试
+https://tool.oschina.net/regex/
+
+## 常见正则 
+
+
+身份证：
+```
+(^\d{15}$)|(^\d{17}([0-9]|X)$)
+```
+
+
+手机号宽松：
+
+```
+^1[3456789]\d{9}
+```
+
