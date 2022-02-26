@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 网络安全渗透测试使用 goby 检测 log4j 漏洞
+title: goby 扫描工具 poc 编写
 categories: [安全]
 description: goby 扫描器使用方式
-keywords:  安全
+keywords:  安全工具
 ---
 
 # goby 
