@@ -1,9 +1,9 @@
 ---
 layout: post
-title: how-to-use-frp
-categories: [frp]
+title: frp内网穿透
+categories: [安全工具]
 description: command
-keywords: 内网穿透
+keywords: 安全工具
 ---
 
 # 为什么需要内网穿透？

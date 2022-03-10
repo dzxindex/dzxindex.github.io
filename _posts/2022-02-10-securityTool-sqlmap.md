@@ -1,9 +1,9 @@
 ---
 layout: post
 title: sqlmap 使用
-categories: [sqlmap]
+categories: [安全工具]
 description: sqlmap
-keywords: sqlmap 
+keywords: 安全工具,sqlmap
 ---
 
 # sqlmap 

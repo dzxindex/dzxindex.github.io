@@ -1,9 +1,9 @@
 ---
 layout: post
 title: getshell 常见实战
-categories: [ getshell]
+categories: [ 安全学习]
 description: getshell
-keywords: getshell 
+keywords: 安全学习 
 ---
 
 # getshell
