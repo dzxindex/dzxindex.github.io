@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Goland debug 模式更新
-categories: [cate1, cate2]
+categories: [编辑器]
 description: Golang Delve版本太低无法Debug
 keywords: Goland , 编辑器
 ---
