@@ -1,9 +1,9 @@
 ---
 layout: post
 title: ctf 使用
-categories: [ctf]
+categories: [安全学习]
 description: ctf
-keywords: ctf 
+keywords: 安全学习,ctf
 ---
 
 # ctf
