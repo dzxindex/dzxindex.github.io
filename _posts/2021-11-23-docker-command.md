@@ -2,8 +2,8 @@
 layout: post
 title: docker command
 categories: [docker]
-description: command
-keywords: docker, keyword2
+description: 常用 docker command
+keywords: command
 ---
 
 # delete 
