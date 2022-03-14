@@ -5,9 +5,8 @@ categories: 工具类
 description: 快速安装 docker
 keywords: docker
 ---
-## nodejson格式
 
-## 安装 docker 和 docker compose
+## 通用安装 docker 和 docker compose
 
 ```shell
 # docker
@@ -26,7 +25,24 @@ docker-compose --version
 ```
 
 
+## kali 安装 docker
 
+```
+第一步：更新apt
+$ apt-get update
+
+第二步：安装必要组件
+$ apt-get install -y apt-transport-https ca-certificates
+$ apt-get install dirmngr
+
+第三步：apt换源[清华教育] 可以选择阿里、中科大等其他源
+$ curl -fsSL https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian/gpg | sudo apt-key add -
+
+$ echo 'deb https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian/ buster stable' | sudo tee /etc/apt/sources.list.d/docker.list
+
+第四步：安装最新版本docker 以及docker文件管理项目
+$ apt-get install docker docker-compose
+```
 
 ##  docker 换源
 
