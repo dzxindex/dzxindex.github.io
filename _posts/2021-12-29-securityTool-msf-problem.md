@@ -45,11 +45,8 @@ exploit
 反弹成功。
 
 
-[图片地址](https://github.com/dzxindex/picture/blob/main/QQ%E6%88%AA%E5%9B%BE20220314191955.png))
+![本站favicon](https://raw.githubusercontent.com/dzxindex/picture/main/QQ%E6%88%AA%E5%9B%BE20220314191955.png)
 
-![](https://img-blog.csdnimg.cn/20201014113809466.png)
-
-![](http://static.runoob.com/images/runoob-logo.png)
 
 ## 利用ms17_010_eternalblue模块进行渗透：
 打开msf框架：
