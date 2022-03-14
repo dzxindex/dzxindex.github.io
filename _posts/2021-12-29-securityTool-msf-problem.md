@@ -45,7 +45,7 @@ exploit
 反弹成功。
 
 
-![本站favicon](https://raw.githubusercontent.com/dzxindex/picture/main/QQ%E6%88%AA%E5%9B%BE20220314191955.png)
+![本站favicon](https://cdn.jsdelivr.net/gh/dzxindex/picture@master/QQ%E6%88%AA%E5%9B%BE20220314191955.png)
 
 
 ## 利用ms17_010_eternalblue模块进行渗透：
