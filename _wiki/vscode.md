@@ -26,7 +26,11 @@ mindmap: true
 
 
 
+## 安装插件
+
+Markdown Shortcuts
+
+![](https://pic4.zhimg.com/80/v2-b1eef97db60db52662b0bf75ed3411f7_720w.jpg)
 	
 	
-	
-	
+docs-markdown
