@@ -16,6 +16,9 @@ keywords: cs
 
 [CS安装](./2022-02-20-security-CsInstall.md)
 
+[FuckAV 免杀](https://github.com/iframepm/FuckAV)
+
+
 ## 二.后门病毒的制作
 
 进来之后我们选择Attacks中的BypassAV(我使用的是CS4.0，没有BypassAV，所以我们可以下载bypass.cna之后通过Cobalt Strike->Script Manager来添加这个模块)
@@ -29,7 +32,23 @@ keywords: cs
 
 制作完成
 
-## 三.免杀操作
+## 三、免杀操作
+
+使用 [FuckAV 免杀](https://github.com/iframepm/FuckAV) 免杀生成工具，加密cs生成木马
+
+1. cs 生成木马
+   attack -> paylaod generat ->  powershell
+
+2. 使用 FuckAV 免杀
+
+![](https://github.com/iframepm/FuckAV/blob/main/upx/powershell.gif)
+
+
+
+
+## 四、免杀操作-BypassAV
+
+> 效果并不好
 
 步骤一：在Restorator中将其他程序的属性覆盖在该后门病毒中，我这里选的是网易云
 
@@ -43,6 +62,8 @@ keywords: cs
 
 
 现在这个BypassAV_se就是可以免杀了
+
+
 
 ## 四.测试
 
