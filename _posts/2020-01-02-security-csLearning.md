@@ -201,3 +201,90 @@ About               #关于
 _使用蚁剑连接webshell_
 
 ![](https://img-blog.csdnimg.cn/20210412141515415.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDQxMjAzNw==,size_16,color_FFFFFF,t_70)
+
+
+![](https://img-blog.csdnimg.cn/20210412141554121.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDQxMjAzNw==,size_16,color_FFFFFF,t_70)
+
+
+执行artifact.exe后门文件，目标靶机成功上线
+
+![](https://img-blog.csdnimg.cn/20210412141713287.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDQxMjAzNw==,size_16,color_FFFFFF,t_70)
+
+点击查看视图的图标，可以看到上线主机的信息为普通用户：zhxxxx
+![](https://img-blog.csdnimg.cn/20210412142036576.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDQxMjAzNw==,size_16,color_FFFFFF,t_70)
+
+### 4、提权
+CS里面含有自动化的提权
+右键选择第一个，进入命令行模式（具体命令可以查看文章最下面的指令大全）
+
+![](https://img-blog.csdnimg.cn/20210412142307829.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDQxMjAzNw==,size_16,color_FFFFFF,t_70)
+
+![](https://img-blog.csdnimg.cn/20210412142403575.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDQxMjAzNw==,size_16,color_FFFFFF,t_70)
+
+
+测试执行命令：getuid，稍等一会儿后会显示执行结果
+
+![https://img-blog.csdnimg.cn/20210412143220746.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDQxMjAzNw==,size_16,color_FFFFFF,t_70](https://img-blog.csdnimg.cn/20210412143220746.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDQxMjAzNw==,size_16,color_FFFFFF,t_70)
+
+
+接下来右键选择提权，如下图所示
+
+![](https://img-blog.csdnimg.cn/20210412143333794.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDQxMjAzNw==,size_16,color_FFFFFF,t_70)
+
+
+默认提权的exp就下面这两个，肯定不够，所以得去加载一些提权的插件
+
+**常用的插件地址：**
+https://github.com/DeEpinGh0st/Erebus
+https://github.com/rsmudge/ElevateKit
+
+
+![](https://img-blog.csdnimg.cn/20210412143358960.png)
+
+下载其中一个提权插件并保存，本示例下载的是：https://github.com/rsmudge/ElevateKit
+
+![](https://img-blog.csdnimg.cn/2021041214392877.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDQxMjAzNw==,size_16,color_FFFFFF,t_70)
+
+**如何加载插件？**
+如下图所示，选择脚本管理器后，会在下面弹窗提示path
+
+![](https://img-blog.csdnimg.cn/20210412143618957.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDQxMjAzNw==,size_16,color_FFFFFF,t_70)
+
+之后选择 插件 并点击打开
+
+![](https://img-blog.csdnimg.cn/20210412144018402.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDQxMjAzNw==,size_16,color_FFFFFF,t_70)
+
+之后点击 Unload 上传插件
+![](https://img-blog.csdnimg.cn/20210412144149852.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDQxMjAzNw==,size_16,color_FFFFFF,t_70)
+
+之后再查看提权的EXP，发现增加了很多
+
+![](https://img-blog.csdnimg.cn/202104121442428.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDQxMjAzNw==,size_16,color_FFFFFF,t_70)
+
+接下来利用 uac-schtasks 的 exp进行提权
+
+
+![](https://img-blog.csdnimg.cn/20210412150118389.png)
+
+
+点击开始之后，可以通过命令看出正在进行攻击测试了，攻击成功的话会上线一个权限为：SYSTEM 的系统，如下图所示，即是成功提权
+
+
+
+
+![](https://img-blog.csdnimg.cn/20210412150225966.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDQxMjAzNw==,size_16,color_FFFFFF,t_70)
+
+
+
+
+### 4.2 Cobalt Strike ——CS与MSF相互联动传递（Empire）
+
+
+
+
+
+
+
+## 参考
+
+[转载：](https://blog.csdn.net/weixin_40412037/article/details/115552975)
