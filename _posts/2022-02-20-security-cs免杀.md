@@ -19,20 +19,11 @@ keywords: cs
 [FuckAV 免杀](https://github.com/iframepm/FuckAV)
 
 
-## 二.后门病毒的制作
-
-进来之后我们选择Attacks中的BypassAV(我使用的是CS4.0，没有BypassAV，所以我们可以下载bypass.cna之后通过Cobalt Strike->Script Manager来添加这个模块)
-
-![](https://img-blog.csdnimg.cn/20210820163205885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDc4NzgzMg==,size_16,color_FFFFFF,t_70)
-
-然后制作一个后门(注:勾选上x64)
-
-![https://img-blog.csdnimg.cn/20210820163206801.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDc4NzgzMg==,size_16,color_FFFFFF,t_70](https://img-blog.csdnimg.cn/20210820163206801.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDc4NzgzMg==,size_16,color_FFFFFF,t_70)
 
 
 制作完成
 
-## 三、免杀操作
+## 二、免杀操作- FuckAV 免杀
 
 使用 [FuckAV 免杀](https://github.com/iframepm/FuckAV) 免杀生成工具，加密cs生成木马
 
@@ -49,9 +40,20 @@ keywords: cs
 
 
 
-## 四、免杀操作-BypassAV
+## 三、免杀操作-BypassAV
 
 > 效果并不好
+
+
+进来之后我们选择Attacks中的BypassAV(我使用的是CS4.0，没有BypassAV，所以我们可以下载bypass.cna之后通过Cobalt Strike->Script Manager来添加这个模块)
+
+![](https://img-blog.csdnimg.cn/20210820163205885.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDc4NzgzMg==,size_16,color_FFFFFF,t_70)
+
+然后制作一个后门(注:勾选上x64)
+
+![https://img-blog.csdnimg.cn/20210820163206801.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDc4NzgzMg==,size_16,color_FFFFFF,t_70](https://img-blog.csdnimg.cn/20210820163206801.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDc4NzgzMg==,size_16,color_FFFFFF,t_70)
+
+
 
 步骤一：在Restorator中将其他程序的属性覆盖在该后门病毒中，我这里选的是网易云
 
