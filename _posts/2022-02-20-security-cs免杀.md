@@ -41,6 +41,8 @@ keywords: cs
 
 2. 使用 FuckAV 免杀
 
+[FuckAV 免杀](https://github.com/iframepm/FuckAV)
+
 ![](https://github.com/iframepm/FuckAV/blob/main/upx/powershell.gif)
 
 
