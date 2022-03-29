@@ -14,7 +14,7 @@ keywords: cs
 
 [BypassAV插件](https://github.com/hack2fun/BypassAV)
 
-[CS安装](./2022-02-20-security-CsInstall.md)
+[CS安装]([./2022-02-20-security-CsInstall.md](https://dzxindex.github.io/2022/02/20/security-CsInstall/))
 
 [FuckAV 免杀](https://github.com/iframepm/FuckAV)
 
