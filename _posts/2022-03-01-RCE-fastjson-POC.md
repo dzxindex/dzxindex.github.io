@@ -226,3 +226,6 @@ Content-Length: 137
     ![](https://img-blog.csdnimg.cn/20200722205445187.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTU5ODY2MA==,size_16,color_FFFFFF,t_70)
 
     ![](https://img-blog.csdnimg.cn/20200722205536663.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTU5ODY2MA==,size_16,color_FFFFFF,t_70)
+
+# 免责声明
+仅作为漏洞复现进行学习，切勿对网站进行非法测试
