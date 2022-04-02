@@ -42,7 +42,7 @@ Linux环境下：
 
 ![](https://img-blog.csdnimg.cn/20210303104639653.png)
 
-可以看到默认连接密码为rebeyond
+可以看到默认连接密码为 rebeyond
 这时通过冰蝎去连接该文件
 
 
