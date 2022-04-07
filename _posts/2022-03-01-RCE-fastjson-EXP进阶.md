@@ -13,7 +13,7 @@ keywords: 安全漏洞, fastjson
 
 [fastjson_rec_exploit](https://github.com/mrknow001/fastjson_rec_exploit)
 
-![Fastjson姿势技巧集合](https://github.com/safe6Sec/Fastjson)
+[Fastjson姿势技巧集合](https://github.com/safe6Sec/Fastjson)
 
 
 
