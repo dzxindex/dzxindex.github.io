@@ -1,9 +1,9 @@
 ---
 layout: post
 title: 一文搞定 MySQL 盲注
-categories: 安全工具
+categories: 安全知识
 description: 一文搞定 MySQL 盲注
-keywords: MySQL 盲注
+keywords: sql注入
 ---
 
 # mysql 盲注学习
