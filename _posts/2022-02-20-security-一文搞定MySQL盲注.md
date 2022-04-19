@@ -12,3 +12,5 @@ keywords: sql注入
 总体来讲，盲注分为**布尔型**和**延时型**两大类。
 
 [一文搞定 MySQL 盲注](https://www.anquanke.com/post/id/266244#h3-2)
+
+[sql 介绍](http://www.yowell.pw/?p=327)

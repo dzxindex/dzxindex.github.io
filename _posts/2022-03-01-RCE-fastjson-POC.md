@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Fastjson v1.2.24远程命令执行
+title: Fastjson 远程命令执行的POC
 categories: [安全漏洞]
-description: Fastjson v1.2.24远程命令执行
+description: Fastjson 远程命令执行的POC
 
 keywords: 安全漏洞, fastjson
 ---
@@ -217,7 +217,8 @@ Content-Length: 137
 
 
 #### 漏洞指纹
-1. DNSlog平台验证
+1. [DNSlog平台验证](http://www.dnslog.cn/)
+   
 （比网上很多payload都要好用，通杀版本）
     payload:
     ```
