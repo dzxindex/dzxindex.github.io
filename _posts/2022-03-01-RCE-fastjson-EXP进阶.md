@@ -11,6 +11,9 @@ keywords: 安全漏洞, fastjson
 
 ## 利用工具
 
+[fastjson反序列化笔记
+](https://apsry.github.io/2022/03/10/fastjson/)
+
 [fastjson_rec_exploit](https://github.com/mrknow001/fastjson_rec_exploit)
 
 [Fastjson姿势技巧集合](https://github.com/safe6Sec/Fastjson)
