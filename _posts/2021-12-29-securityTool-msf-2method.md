@@ -6,6 +6,17 @@ description: docker 版本安装 msf
 keywords: 安全工具,msf
 ---
 
+# docker 安装 msf
+
+创建容器：
+```
+docker run -it -d --name msf -p 1234:1234 linuxkonsult/kali-metasploit
+```
+
+进入容器：
+```
+docker exec -it id /bin/bash
+```
 # 0x01 环境
 
 攻击机：Kali Linux 2020.1 172.16.252.129
