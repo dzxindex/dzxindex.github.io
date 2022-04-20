@@ -15,7 +15,8 @@ docker run -it -d --name msf -p 1234:1234 linuxkonsult/kali-metasploit
 
 进入容器：
 ```
-docker exec -it id /bin/bash
+docker exec -it msf /bin/bash
+msfconsole
 ```
 # 0x01 环境
 
