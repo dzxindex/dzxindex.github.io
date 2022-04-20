@@ -2,7 +2,7 @@
 layout: post
 title:  安全信息泄露之未授权访问
 categories: 安全知识
-description:  zookeeper 未授权
+description: 未授权
 keywords: 未授权
 ---
 
