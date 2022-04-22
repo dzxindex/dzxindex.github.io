@@ -1,11 +1,12 @@
 ---
 layout: wiki
-title: 真心话大冒险
+title: 真心话
 cate1: Tools
-cate2: 
-description: 真心话大冒险
-keywords: 软件, 推荐
+cate2: Editor
+description: 个人最常用的 Vim 常用操作。
+keywords: Vim
 ---
+
 
 # 普通版本
 
