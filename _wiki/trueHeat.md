@@ -1,9 +1,9 @@
 ---
 layout: wiki
-title: 真心话
+title: Vim2
 cate1: Tools
 cate2: Editor
-description: 个人最常用的 Vim 常用操作。
+description: 真心话
 keywords: Vim
 ---
 
