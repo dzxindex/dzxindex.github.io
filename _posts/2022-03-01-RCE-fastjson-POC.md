@@ -240,4 +240,6 @@ Content-Length: 137
 
 # 免责声明
 
+[干货｜最全fastjson漏洞复现与绕过
+](https://cloud.tencent.com/developer/article/1974944)
 仅作为漏洞复现进行学习，切勿对网站进行非法测试
