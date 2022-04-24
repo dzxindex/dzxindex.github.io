@@ -6,6 +6,10 @@ description: 常用安全工具合集
 keywords: 安全工具
 ---
 
+# 信息收集
+
+[漏洞搜索工具-SearchSploit
+](https://isbase.cc/article/searchsploit/script-1.html)
 # 老外的工具：
 
 https://nullsecurity.net/tools.html
@@ -28,3 +32,5 @@ https://github.com/k8gege/Ladon
 
 - [Linux 后门](https://github.com/ims1m/I0upFile/tree/53287a7998249811a27730e58ca391a2aa72b0a5/Exploit/Linux)
 https://github.com/ims1m/I0upFile/tree/53287a7998249811a27730e58ca391a2aa72b0a5/Exploit/Linux
+
+
