@@ -11,7 +11,7 @@ keywords: 安全工具,msf
 
 创建容器：
 ```
- docker run --rm -it  --name msf -p      strm/metasploit
+ docker run --rm -it  --name msf     strm/metasploit
 ```
 
 进入容器：
