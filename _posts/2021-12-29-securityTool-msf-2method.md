@@ -11,7 +11,7 @@ keywords: 安全工具,msf
 
 创建容器：
 ```
-docker run -it -d --name msf -p 1234:1234 linuxkonsult/kali-metasploit
+ docker run --rm -it  --name msf -p      strm/metasploit
 ```
 
 进入容器：
