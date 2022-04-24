@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 使用 Msfvenom 生成Ubuntu 64位木马（反向连接、正向连接）
+title: 使用 msf 生成Ubuntu 64位木马（反向连接、正向连接）
 categories: [安全工具]
 description: docker 版本安装 msf 
 keywords: 安全工具,msf
