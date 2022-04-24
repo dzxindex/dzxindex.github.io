@@ -23,7 +23,7 @@ msfconsole
 攻击机：Kali Linux 2020.1 172.16.252.129
 靶机：Ubuntu 16.04 172.16.252.138
 
-##查看当前系统的位数
+**查看当前系统的位数：**
 
 ```[root@localhost ~]# getconf LONG_BIT```
 
