@@ -2,6 +2,10 @@
   url: http://mazhuang.org
   src: life
 
+- name:  安全研究员 - nice_0e3
+  url:   https://www.cnblogs.com/nice0e3/
+  src: life
+
 - name:  安全博客 - apsry
   url: https://apsry.github.io/
   src: life
@@ -13,6 +17,10 @@
 - name:  精华-HACK学习
   url: https://cloud.tencent.com/developer/user/5957324
   src: life
+
+
+
+
 
 
 

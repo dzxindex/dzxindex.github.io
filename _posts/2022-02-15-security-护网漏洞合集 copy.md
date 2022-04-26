@@ -91,3 +91,24 @@ meterpreter>net user 查看用户密码
 # 版本泄露漏洞
 
 - nginx 报错无屏蔽版本
+
+# windows CVE-2019-0708 漏洞利用复现
+
+https://www.freebuf.com/articles/system/269901.html
+
+0x00漏洞概述:
+
+Windows系列服务器于2019年5月15号，被爆出高危漏洞，该服务器漏洞利用方式是通过远程桌面端口3389，RDP协议进行攻击的，堪比WannaCry(蠕虫病毒)。
+
+0x01影响版本:
+
+Windows 7
+
+Windows Server 2008 R2
+
+Windows Server 2008
+
+Windows Server 2003
+
+Windows XP
+
