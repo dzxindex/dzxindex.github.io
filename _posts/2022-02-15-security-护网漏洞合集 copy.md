@@ -92,6 +92,10 @@ meterpreter>net user 查看用户密码
 
 - nginx 报错无屏蔽版本
 
+# Windows Print Spooler服务最新漏洞CVE-2021-34527详细分析
+
+https://blog.csdn.net/weixin_45728976/article/details/118612863
+
 # windows CVE-2019-0708 漏洞利用复现
 
 https://www.freebuf.com/articles/system/269901.html
