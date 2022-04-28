@@ -1,10 +1,12 @@
 ---
 layout: post
-title: 在Linux上安装JDK
+title: 安装 java 环境
 categories: java
-description: 在Linux上安装JDK
+description: 安装 java 环境
 keywords: java
 ---
+
+# linux 安装 java 环境
 
 介绍如何在Linux上安装JDK，若Linux上已经安装了JDK，则不需要重复安装；若没有安装，可参考该指导进行安装。以下以 **jdk-8u144-linux-x64.tar.gz** 为例介绍安装方法。
 

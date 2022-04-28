@@ -26,7 +26,6 @@ CVE-2017-18349即Fastjson1.2.24 反序列化漏洞RCE
 ## 漏洞原理
 fastjson在解析json对象时，会使用autoType实例化某一个具体的类，并调用set/get方法访问属性。漏洞出现在Fastjson autoType处理json对象时，没有对@type字段进行完整的安全性验证，我们可以传入危险的类并调用危险类连接远程RMI服务器，通过恶意类执行恶意代码，进而实现远程代码执行漏洞。
 
-> 影响版本为 `fastjson < 1.2.25`
 
 **漏洞影响版本**
 
@@ -91,7 +90,7 @@ public class TouchFile {
 
 - 下载 [marshalsec](https://github.com/mbechler/marshalsec) 项目 
 
-java8 下，使用 maven 构建 `mvn clean package -DskipTests` 生成相应jar包
+java8 下，使用 maven 构建 `mvn clean package -DskipTests` 生成相应jar包, 打开 target 目录，jar 包会在里面。
 
 ![](https://img-blog.csdnimg.cn/b8c45fc54cac4e1e8506e67ff5ab3211.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAQmlnJkJpcmQ=,size_20,color_FFFFFF,t_70,g_se,x_16)
 
