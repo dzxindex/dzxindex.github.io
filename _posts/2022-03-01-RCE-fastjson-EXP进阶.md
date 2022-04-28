@@ -22,7 +22,18 @@ keywords: 安全漏洞, fastjson
 
 [Fastjson姿势技巧集合](https://github.com/safe6Sec/Fastjson)
 
-
+[fastjson 不出网利用总结
+](https://cloud.tencent.com/developer/article/1785575)
 
 [FastjonExploit | Fastjson漏洞快速利用框架
 ](https://github.com/c0ny1/FastjsonExploit)
+
+
+# 工具
+
+
+[fastjson漏洞burp插件，检测fastjson<1.2.68基于dnslog，fastjson<=1.2.24和1.2.33<=fatjson<=1.2.47的不出网检测和TomcatEcho,SpringEcho回显方案。](https://github.com/zilong3033/fastjsonScan)
+
+[fastjson不出网利用、c3p0](https://github.com/depycode/fastjson-c3p0)
+[fastjson 被动扫描、不出网payload生成
+](https://github.com/bigsizeme/fastjson-check)
