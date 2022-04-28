@@ -188,7 +188,7 @@ public class TouchFile {
 }
 ```
 
-然后 `javac TouchFile.java `编译一下，生成 `TouchFile.class`
+然后 `javac TouchFile.java `编译一下，生成 `TouchFile.class` 
 
 #### nc 监听:
 
