@@ -36,8 +36,9 @@ keywords: java
     sudo rm jdk-8u144-linux-x64.tar.gz
 
     ```
-3. 设置JDK环境变量
+## 设置 java 环境变量
 采用的全局设置方法，即修改“/etc/profile”，它是所有用户共用的环境变量。
+
     a. 打开文件“/etc/profile”。
 
     ```
@@ -62,7 +63,7 @@ keywords: java
     ```
     source /etc/profile
     ```
-4. 检验是否安装成功
+1. 检验是否安装成功
     ```
     java -version
     ```
