@@ -8,17 +8,29 @@ keywords: 安全漏洞, fastjson
 ---
 
 
+# 简介
 
-# 前言
 
 **漏洞描述**
 FastJson 库是 Java 的一个 Json 库，其作用是将 Java 对象转换成 json 数据来表示，也可以将 json 数据转换成 Java 对象，使用非常方便，号称是执行速度最快的库。
 
 在 1.2.24 版本的 Fastjson 出现了一个反序列化的漏洞，fastjson 在解析 json 的过程中，支持使用 autoType 来实例化某一个具体的类，并调用该类的 set/get 方法来访问属性。通过查找代码中相关的方法，即可构造出一些恶意利用链。
 
+
+# CVE-2017-18349
+
+
+
+CVE-2017-18349即Fastjson1.2.24 反序列化漏洞RCE
+
+## 漏洞原理
+fastjson在解析json对象时，会使用autoType实例化某一个具体的类，并调用set/get方法访问属性。漏洞出现在Fastjson autoType处理json对象时，没有对@type字段进行完整的安全性验证，我们可以传入危险的类并调用危险类连接远程RMI服务器，通过恶意类执行恶意代码，进而实现远程代码执行漏洞。
+
+> 影响版本为 `fastjson < 1.2.25`
+
 **漏洞影响版本**
 
-fastjson <= 1.2.24
+> 影响版本为 `fastjson < 1.2.25`
 
 ## 准备环境
 
