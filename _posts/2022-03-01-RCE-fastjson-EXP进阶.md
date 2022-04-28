@@ -9,7 +9,11 @@ keywords: 安全漏洞, fastjson
 
 
 
-## 利用工具
+## 进阶简介
+
+
+[手把手 fastjson 源码解析
+](https://www.cnblogs.com/nice0e3/p/14601670.html#fastjson%E4%BD%BF%E7%94%A8)
 
 [干货｜最全fastjson漏洞复现与绕过
 ](https://cloud.tencent.com/developer/article/1974944)
