@@ -72,3 +72,24 @@ keywords: java
 ```
 java version "1.8.0_144" Java(TM) SE Runtime Environment (build 1.8.0_144-b03) Java HotSpot(TM) 64-Bit Server VM (build 25.77-b03, mixed mode)
 ```
+## 运行测试
+
+以下我们通过一个简单的实例来展示 Java 编程，`创建文件 HelloWorld.java`(文件名需与类名一致), 代码如下：
+
+```dotnetcli
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}
+```
+
+运行以上实例，输出结果如下：
+
+
+
+```
+$ javac HelloWorld.java
+$ java HelloWorld
+Hello World
+```
