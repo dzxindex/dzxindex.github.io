@@ -12,13 +12,19 @@ keywords: 安全漏洞, fastjson
 ## 进阶简介
 
 
-[手把手 fastjson 源码解析
-](https://www.cnblogs.com/nice0e3/p/14601670.html#fastjson%E4%BD%BF%E7%94%A8)
+Fastjson姿势技巧集合:
+https://github.com/safe6Sec/Fastjson
 
-[干货｜最全fastjson漏洞复现与绕过
-](https://cloud.tencent.com/developer/article/1974944)
+最全fastjson漏洞复现与绕过:
+https://cloud.tencent.com/developer/article/1974944
+
+Fastjson之源码分析：
+https://www.cnblogs.com/nice0e3/p/14601670.html#fastjson%E4%BD%BF%E7%94%A8
+
+
 [源码分析 fastjson 
 ](https://www.cnblogs.com/nice0e3/p/14601670.html#fastjson%E6%A6%82%E8%BF%B0)
+
 [fastjson反序列化笔记
 ](https://apsry.github.io/2022/03/10/fastjson/)
 
