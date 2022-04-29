@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 逆向 APP 学习-01-*oulapp的双向证书破解
-categories: [安全学习]
+categories: [逆向]
 description: *oulapp的双向证书破解
 keywords:  反编译,逆向
 ---
