@@ -1,8 +1,10 @@
-- name: 码志
-  url: http://mazhuang.org
+
+
+- name:  安全运营-安全运营之路 - 
+  url:   https://wiki.y1ng.org/0x7_%E9%BB%91%E7%81%B0%E4%BA%A7%E7%A0%94%E7%A9%B6/7xE_%E7%9C%9F%E4%BA%BA%E4%BC%97%E5%8C%85%E7%B1%BB%E9%BB%91%E4%BA%A7%E5%BD%A2%E5%BC%8F%E7%A0%94%E7%A9%B6/#_4
   src: life
 
-- name:  安全研究员 - nice_0e3
+- name:  安全研究员笔记 - nice_0e3
   url:   https://www.cnblogs.com/nice0e3/
   src: life
 
@@ -19,6 +21,9 @@
   src: life
 
 
+- name: 码志
+  url: http://mazhuang.org
+  src: life
 
 
 

