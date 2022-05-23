@@ -49,6 +49,18 @@ r = requests.get("http://www.google.com/")
 print(r)
 
 ```
+# requests 模块使用代理
+```al
+import requests
+proxy = {
+'http' : 'http://138.197.222.35:80',
+'https' : 'http://1138.197.222.35:8080'
+}
+
+r = requests.get('http://httpbin.org/ip', proxies=proxy)
+print (r)
+
+```
 
 # 查看请求来源地址网址
 ```nginx
