@@ -49,3 +49,9 @@ r = requests.get("http://www.google.com/")
 print(r)
 
 ```
+
+# 查看请求来源地址网址
+```nginx
+
+ curl httpbin.org/ip
+```
