@@ -41,8 +41,8 @@ import requests
 import os
 
 
-os.environ['http_proxy'] = '192.168.22.2:1088'
-os.environ['https_proxy'] = '192.168.22.2:1088'
+os.environ['http_proxy'] = 'http://192.168.22.2:1088'
+os.environ['https_proxy'] = 'http://192.168.22.2:1088'
 r = requests.get("http://httpbin.org/ip").json()
 print(r)
 r = requests.get("http://www.google.com/")
