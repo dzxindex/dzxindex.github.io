@@ -193,7 +193,11 @@ public class TouchFile {
 
 #### nc 监听:
 
+`攻击机`执行
+```al
 nc -lvvp 4444
+
+```
 
 访问 FastJson 页面，使用 Burp 抓包，改为 POST 请求，使用 exp 反弹 shell
 
