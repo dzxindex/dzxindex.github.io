@@ -51,7 +51,7 @@ javac 1.8.0_222
 
 ## 漏洞环境
 靶场选择使用vulhub搭建，网址：<https://github.com/vulhub/vulhub>
-
+或者 [vulfocus：]( https://vulfocus.cn/) 
 下载 vulhub ，找到 `fastjson/1.2.24-rce 目录`，使用docker-compose up -d启动环境。
 
 

