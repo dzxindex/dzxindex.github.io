@@ -15,7 +15,7 @@ keywords: java
 
 - 直接运行启动类
 - 利用mvn spring-boot:run运行
-- 打包成jar包后，利用java -jar xxx.jar运行
+- [打包成jar包后，利用java -jar xxx.jar运行](https://www.liaoxuefeng.com/wiki/1252599548343744/1282386595676193)
 - 打包成war包后，利用java -jar xxx.war运行
 
 ## 遇到的问题

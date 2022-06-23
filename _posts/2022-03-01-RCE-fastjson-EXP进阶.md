@@ -17,6 +17,13 @@ keywords: 安全漏洞, fastjson
 payload:
 https://www.freebuf.com/articles/web/283585.html
 
+
+fastjson 反序列化漏洞整理：
+http://x2y.pw/2020/11/15/fastjson-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E6%95%B4%E7%90%86/
+
+
+https://paper.seebug.org/papers/scz/web/202005121629.txt
+
 Fastjson姿势技巧集合:
 https://github.com/safe6Sec/Fastjson
 
