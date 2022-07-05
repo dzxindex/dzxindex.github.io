@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Cobalt Strike-安装与使用教程
+title: Cobalt Strike 的安装与使用教程
 categories: 安全工具
-description: Cobalt Strike汉化版——安装与使用教程
+description: Cobalt Strike 汉化版的安装与使用教程
 keywords: cs
 ---
 
