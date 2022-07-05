@@ -306,6 +306,15 @@ ExternalC2是Cobalt Strike引入的一种规范（或者框架），黑客可以
 
 [ExternalC2的中文翻译](https://xz.aliyun.com/t/2239)
 
+
+# CobaltStrike 免费域名通过 CDN Https 上线
+
+[CobaltStrike 免费域名通过 CDN Https 上线
+](https://zeo.cool/2020/10/13/CS%E9%80%9A%E8%BF%87(CDN+%E8%AF%81%E4%B9%A6)powershell%E4%B8%8A%E7%BA%BF%E8%AF%A6%E7%BB%86%E7%89%88/)
+
+[参考](https://blog.zjun.info/tech/cobaltstrike-goes-online-via-cdn-and-https/)
+
+![](https://img-blog.csdnimg.cn/img_convert/3179004d6115f5f9361413a40108eed2.png)
 # 参考
 
 ##  知识库
