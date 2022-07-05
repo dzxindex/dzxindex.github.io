@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Cobalt Strike汉化版——安装与使用教程
+title: Cobalt Strike-安装与使用教程
 categories: 安全工具
 description: Cobalt Strike汉化版——安装与使用教程
 keywords: cs
@@ -282,11 +282,37 @@ https://github.com/rsmudge/ElevateKit
 ### 4.2 Cobalt Strike ——CS与MSF相互联动传递（Empire）
 
 
+# ExternalC2 拓展模块
+
+ExternalC2是Cobalt Strike引入的一种规范（或者框架），黑客可以利用这个功能拓展C2通信渠道，而不局限于默认提供的`HTTP(S)/DNS/SMB`通道。大家可以参考此处下载完整的规范说明。
+
+简而言之，用户可以使用这个框架来开发各种组件，包括如下组件：
+
+1、第三方控制端（`Controller`）：负责连接Cobalt Strike TeamServer，并且能够使用自定义的C2通道与目标主机上的第三方客户端（Client）通信。
+
+2、第三方客户端（`Client`）：使用自定义C2通道与第三方Controller通信，将命令转发至 `SMB Beacon`。
+
+3、SMB Beacon：在受害者主机上执行的标准 `beacon`。
+
+从CS提供的官方文档中，我们可以看到如下示意图：
 
 
 
+## 使用方式
+[官方文档](https://hstechdocs.helpsystems.com/manuals/cobaltstrike/current/userguide/content/topics/listener-infrastructue_external-c2.htm?cshid=1043)
 
+[ExternalC2
+](https://github.com/ryhanson/ExternalC2)
 
-## 参考
+[ExternalC2的中文翻译](https://xz.aliyun.com/t/2239)
+
+# 参考
+
+##  知识库
+
+[Cobalt_Strike_wiki](https://github.com/aleenzz/Cobalt_Strike_wiki)
+
 
 [转载：](https://blog.csdn.net/weixin_40412037/article/details/115552975)
+
+
