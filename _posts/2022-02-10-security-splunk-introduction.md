@@ -1,20 +1,11 @@
 ---
 layout: post
-title: ctf 使用
+title: splunk 介绍
 categories: [安全学习]
-description: ctf
-keywords: 安全学习,ctf
+description: splunk 介绍
+keywords: 安全学习
 ---
 
-# ctf
+# splunk 的安全规则 DSL 语法
 
-## CTF web 注意流程
-
-- F12 源码
-- 禁止跳转
-- 逻辑路径
-
-### 逻辑路径
-
-- 每个文件名，填入 url 路径查看
-
+DMS定义了一套领域专用语言DSL（Domain Specific Language）用来描述安全规则。DSL语法非常灵活，理论上可以表述任意安全规则，从而帮助不同企业定义符合自己的研发规范。
