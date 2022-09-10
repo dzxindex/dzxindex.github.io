@@ -8,6 +8,8 @@ keywords: 安全工具,sqlmap
 
 # 一．启动
 
+[冰蝎下载](https://github.com/rebeyond/Behinder/releases)
+
 ![](https://img-blog.csdnimg.cn/20210303104648896.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JyaW5nX2NvY28=,size_16,color_FFFFFF,t_70)
 Windows环境下：
 
